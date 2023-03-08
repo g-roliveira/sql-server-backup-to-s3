@@ -10,7 +10,44 @@ Este script Bash é usado para fazer backup de todos os bancos de dados no SQL S
     - Um bucket S3 existente para armazenar backups
     - Acesso de gravação ao diretório de backup local no sistema de backup
 
-## Como usar
+
+## Instalando aws-cli no Debian/Ubuntu
+
+1. Atualizar a lista de pacotes
+    ```bash
+    sudo apt-get update
+
+2. Instalar o pacote awscli
+    ```bash
+    sudo apt-get install awscli
+
+3. Verificar se o aws-cli foi instalado com sucesso
+    ```bash
+    aws --version
+    
+## Instalando aws-cli no RHEL/CentOS
+
+1. Atualizar a lista de pacotes
+    ```bash
+    sudo yum update
+
+2. Instalar o pacote awscli
+    ```bash
+    sudo yum install awscli
+
+3. Verificar se o aws-cli foi instalado com sucesso
+    ```bash
+    aws --version
+
+*Obs: Lembre-se de configurar suas credenciais da AWS após a instalação do aws-cli para que você possa autenticar as solicitações ao S3. Você pode fazer isso executando o seguinte comando:*
+```bash
+aws configure
+```
+## Instalando mssql-tools. 
+
+[Clique aqui](https://learn.microsoft.com/pt-br/sql/linux/sql-server-linux-setup-tools?view=sql-server-ver16&tabs=redhat-install%2Credhat-offline) para acessar o guia de instalação das ferramentas do SQL Server no Linux da Microsoft.
+
+## Como usar o Script
 
 1. Clone este repositório em seu sistema de backup local:
 
@@ -28,19 +65,18 @@ Este script Bash é usado para fazer backup de todos os bancos de dados no SQL S
 Salve as alterações no arquivo.
 
 4. Torne o script executável:
-    ```
+    ```bash
     chmod +x backup.sh
-    ```
 
 5. Agende o script para ser executado diariamente, por exemplo, usando o cron no Linux. Adicione a seguinte linha ao arquivo cron para executar o script todos os dias às 3h da manhã:
-    ```
+    ```bash
     0 3 * * * /caminho/para/o/script.sh >/dev/null 2>&1
-    ```
+    
 Certifique-se de substituir /caminho/para/o/script.sh pelo caminho para o arquivo backup.sh em seu sistema.
 
 
 6. Execute o script manualmente para testar o backup:
-    ```
+    ```bash
     ./backup.sh
-    ```
+
 Isso irá executar o backup de todos os bancos de dados e enviar os arquivos de backup para o bucket S3.
