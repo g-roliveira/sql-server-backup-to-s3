@@ -45,7 +45,7 @@ aws configure
 ```
 ## Instalando mssql-tools. 
 
-[Clique aqui](https://learn.microsoft.com/pt-br/sql/linux/sql-server-linux-setup-tools?view=sql-server-ver16&tabs=redhat-install%2Credhat-offline) para acessar o guia de instalação das ferramentas do SQL Server no Linux da Microsoft.
+<a href="https://learn.microsoft.com/pt-br/sql/linux/sql-server-linux-setup-tools?view=sql-server-ver16&tabs=redhat-install%2Credhat-offline" target="_blank">Clique aqui</a> para acessar o guia de instalação das ferramentas do SQL Server no Linux da Microsoft.
 
 ## Como usar o Script
 
